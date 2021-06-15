@@ -36,25 +36,25 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
-<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
-<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
-<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="yes" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
@@ -93,11 +93,11 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="113" name="IDFDebug" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="114" name="Badge_Outline" color="7" fill="1" visible="no" active="yes"/>
-<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="no" active="yes"/>
+<layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="117" name="BACKMAAT1" color="7" fill="1" visible="no" active="no"/>
-<layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="yes"/>
+<layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="no" active="no"/>
 <layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="no" active="no"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
@@ -188,6 +188,9 @@
 <board>
 <plain>
 <circle x="57.15" y="44.45" radius="40" width="0.1524" layer="20"/>
+<hole x="76.327" y="19.2278" drill="3.5"/>
+<hole x="34.1122" y="43.688" drill="3.5"/>
+<hole x="78.3844" y="65.786" drill="3.5"/>
 </plain>
 <libraries>
 <library name="SparkFun-Resistors">
@@ -873,32 +876,6 @@ CONN_02
 </package>
 </packages>
 </library>
-<library name="SMT-BUZZER">
-<packages>
-<package name="CUI_CMT-8530S-SMT">
-<text x="6.25485" y="-4.1332" size="1.270990625" layer="21" rot="R90">+</text>
-<text x="-5.07218125" y="5.17221875" size="1.27055" layer="25">&gt;NAME</text>
-<text x="-4.57293125" y="-6.604240625" size="1.270809375" layer="27">&gt;VALUE</text>
-<wire x1="-4.25" y1="-4.25" x2="-4.25" y2="4.25" width="0.127" layer="51"/>
-<wire x1="2" y1="-4.25" x2="-2" y2="-4.25" width="0.127" layer="21"/>
-<wire x1="-4.25" y1="2" x2="-4.25" y2="-2" width="0.127" layer="21"/>
-<wire x1="4.25" y1="-4.25" x2="-4.25" y2="-4.25" width="0.127" layer="51"/>
-<text x="5.16041875" y="3.220259375" size="1.2701" layer="21">-</text>
-<wire x1="-5" y1="5" x2="-5" y2="-5" width="0.05" layer="39"/>
-<wire x1="5" y1="-5" x2="-5" y2="-5" width="0.05" layer="39"/>
-<wire x1="-4.25" y1="4.25" x2="4.25" y2="4.25" width="0.127" layer="51"/>
-<wire x1="4.25" y1="4.25" x2="4.25" y2="-4.25" width="0.127" layer="51"/>
-<wire x1="-2" y1="4.25" x2="2" y2="4.25" width="0.127" layer="21"/>
-<wire x1="4.25" y1="2" x2="4.25" y2="-2" width="0.127" layer="21"/>
-<wire x1="5" y1="5" x2="-5" y2="5" width="0.05" layer="39"/>
-<wire x1="5" y1="5" x2="5" y2="-5" width="0.05" layer="39"/>
-<smd name="P" x="3.5" y="-3.5" dx="2.5" dy="2.5" layer="1"/>
-<smd name="N" x="3.5" y="3.5" dx="2.5" dy="2.5" layer="1"/>
-<smd name="1" x="-3.5" y="3.5" dx="2.5" dy="2.5" layer="1"/>
-<smd name="2" x="-3.5" y="-3.5" dx="2.5" dy="2.5" layer="1"/>
-</package>
-</packages>
-</library>
 <library name="SparkFun-Resistors" urn="urn:adsk.eagle:library:532">
 <description>&lt;h3&gt;SparkFun Resistors&lt;/h3&gt;
 This library contains resistors. Reference designator:R. 
@@ -1533,6 +1510,32 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 </package>
 </packages>
 </library>
+<library name="CMT-7525S-SMT">
+<packages>
+<package name="CUI_CMT-7525S-SMT">
+<text x="6.25653125" y="-4.13431875" size="1.27133125" layer="21" rot="R90">+</text>
+<text x="-3.804509375" y="5.176140625" size="1.271509375" layer="25">&gt;NAME</text>
+<text x="-3.81176875" y="-6.606540625" size="1.271259375" layer="27">&gt;VALUE</text>
+<wire x1="-3.75" y1="-3.75" x2="-3.75" y2="3.75" width="0.127" layer="51"/>
+<wire x1="1.5" y1="-3.75" x2="-1.5" y2="-3.75" width="0.127" layer="21"/>
+<wire x1="-3.75" y1="1.5" x2="-3.75" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="3.75" y1="-3.75" x2="-3.75" y2="-3.75" width="0.127" layer="51"/>
+<text x="5.16728125" y="3.22455" size="1.271790625" layer="21">-</text>
+<wire x1="-4.5" y1="4.5" x2="-4.5" y2="-4.5" width="0.05" layer="39"/>
+<wire x1="4.5" y1="-4.5" x2="-4.5" y2="-4.5" width="0.05" layer="39"/>
+<wire x1="-3.75" y1="3.75" x2="3.75" y2="3.75" width="0.127" layer="51"/>
+<wire x1="3.75" y1="3.75" x2="3.75" y2="-3.75" width="0.127" layer="51"/>
+<wire x1="-1.5" y1="3.75" x2="1.5" y2="3.75" width="0.127" layer="21"/>
+<wire x1="3.75" y1="1.5" x2="3.75" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="4.5" y1="4.5" x2="-4.5" y2="4.5" width="0.05" layer="39"/>
+<wire x1="4.5" y1="4.5" x2="4.5" y2="-4.5" width="0.05" layer="39"/>
+<smd name="P" x="3" y="-3" dx="2.5" dy="2.5" layer="1"/>
+<smd name="1" x="-3" y="-3" dx="2.5" dy="2.5" layer="1"/>
+<smd name="N" x="3" y="3" dx="2.5" dy="2.5" layer="1"/>
+<smd name="2" x="-3" y="3" dx="2.5" dy="2.5" layer="1"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1861,17 +1864,6 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="CAP-00810" x="-8.6868" y="20.4724" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="59.1312" y="58.5724" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
 </element>
-<element name="LS2" library="SMT-BUZZER" package="CUI_CMT-8530S-SMT" value="CMT-8530S-SMT" x="58.0898" y="30.0228" smashed="yes" rot="R180">
-<attribute name="AVAILABILITY" value="In Stock" x="14.9098" y="37.6428" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="CUI_PURCHASE_URL" value="https://www.cuidevices.com/product/audio/buzzers/audio-transducers/cmt-8530s-smt-tr?utm_source=snapeda.com&amp;utm_medium=referral&amp;utm_campaign=snapedaBOM" x="14.9098" y="37.6428" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DESCRIPTION" value="8.5 mm, 3.6 Vo-p, 90 dB, Surface Mount (SMT), Magnetic Audio Transducer Buzzer" x="14.9098" y="37.6428" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="CUI Devices" x="14.9098" y="37.6428" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MP" value="CMT-8530S-SMT-TR" x="14.9098" y="37.6428" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="63.16198125" y="24.85058125" size="1.27055" layer="25" rot="R180"/>
-<attribute name="PACKAGE" value=" CUI" x="14.9098" y="37.6428" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="PRICE" value="None" x="14.9098" y="37.6428" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VALUE" x="62.66273125" y="36.627040625" size="1.270809375" layer="27" rot="R180"/>
-</element>
 <element name="MS5611" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" package="0603" package3d_urn="urn:adsk.eagle:package:37414/1" value="100nF" x="47.4472" y="59.0804" smashed="yes" rot="R270">
 <attribute name="NAME" x="48.2092" y="59.0804" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-00810" x="-16.0528" y="23.5204" size="1.778" layer="27" rot="R270" display="off"/>
@@ -2101,6 +2093,17 @@ design rules under a new name.</description>
 <attribute name="PRICE" value="None" x="3.3782" y="-3.5814" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/ABM3B-26.000MHZ-10-1-U-T/?ref=eda" x="3.3782" y="-3.5814" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
+<element name="LS1" library="CMT-7525S-SMT" package="CUI_CMT-7525S-SMT" value="CMT-7525S-SMT" x="58.42" y="30.1498" smashed="yes" rot="R180">
+<attribute name="AVAILABILITY" value="In Stock" x="58.42" y="30.1498" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="CUI_PURCHASE_URL" value="https://www.cuidevices.com/product/audio/buzzers/audio-transducers/cmt-7525s-smt-tr?utm_source=snapeda.com&amp;utm_medium=referral&amp;utm_campaign=snapedaBOM" x="58.42" y="30.1498" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value="7.5 mm, 3.6 Vo-p, 90 dB, Surface Mount (SMT), Magnetic Audio Transducer Buzzer" x="58.42" y="30.1498" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="CUI Devices" x="58.42" y="30.1498" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="CMT-7525S-SMT-TR" x="58.42" y="30.1498" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="62.224509375" y="24.973659375" size="1.271509375" layer="25" rot="R180"/>
+<attribute name="PACKAGE" value=" CUI Inc." x="58.42" y="30.1498" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PRICE" value="None" x="58.42" y="30.1498" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="62.23176875" y="36.756340625" size="1.271259375" layer="27" rot="R180"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -2142,7 +2145,6 @@ design rules under a new name.</description>
 <contactref element="J5" pad="SHLD2"/>
 <contactref element="J5" pad="SHLD3"/>
 <contactref element="J5" pad="GND1"/>
-<contactref element="LS2" pad="N"/>
 <contactref element="POWER1" pad="1"/>
 <contactref element="RC1" pad="C"/>
 <contactref element="RC2" pad="2"/>
@@ -2188,6 +2190,7 @@ design rules under a new name.</description>
 <via x="52.832" y="73.4822" extent="1-16" drill="0.381"/>
 <via x="50.3174" y="50.8762" extent="1-16" drill="0.381"/>
 <via x="55.6006" y="46.3804" extent="1-16" drill="0.381"/>
+<contactref element="LS1" pad="N"/>
 </signal>
 <signal name="3.3V" class="1">
 <contactref element="C7" pad="1"/>
@@ -2301,10 +2304,9 @@ design rules under a new name.</description>
 <wire x1="32.214" y1="30.88591875" x2="32.976" y2="31.64791875" width="0.3048" layer="1"/>
 <wire x1="32.976" y1="31.64791875" x2="33.738" y2="31.64791875" width="0.3048" layer="1"/>
 <wire x1="29.362878125" y1="24.1368" x2="30.1752" y2="23.324478125" width="0.3048" layer="1"/>
-<wire x1="30.1752" y1="23.324478125" x2="30.1752" y2="18.4658" width="0.3048" layer="1"/>
-<wire x1="30.1752" y1="18.4658" x2="35.9664" y2="12.6746" width="0.3048" layer="1"/>
-<wire x1="35.9664" y1="12.6746" x2="39.3192" y2="12.6746" width="0.3048" layer="1"/>
-<wire x1="39.3192" y1="12.6746" x2="40.48436875" y2="13.83976875" width="0.3048" layer="1"/>
+<wire x1="30.1752" y1="23.324478125" x2="30.1752" y2="18.785246875" width="0.3048" layer="1"/>
+<wire x1="37.893653125" y1="13.0556" x2="39.7002" y2="13.0556" width="0.3048" layer="1"/>
+<wire x1="39.7002" y1="13.0556" x2="40.48436875" y2="13.83976875" width="0.3048" layer="1"/>
 <wire x1="40.48436875" y1="13.83976875" x2="40.48436875" y2="14.731071875" width="0.3048" layer="1"/>
 <wire x1="48.0822" y1="37.4786" x2="48.0822" y2="35.5346" width="0.3048" layer="1"/>
 <wire x1="48.0822" y1="35.5346" x2="48.9966" y2="34.6202" width="0.3048" layer="1"/>
@@ -2414,6 +2416,7 @@ design rules under a new name.</description>
 <via x="61.4172" y="39.5478" extent="1-16" drill="0.381"/>
 <wire x1="61.4172" y1="39.5478" x2="61.4172" y2="38.696" width="0.3048" layer="1"/>
 <wire x1="61.4172" y1="38.696" x2="60.5028" y2="37.7816" width="0.3048" layer="1"/>
+<wire x1="30.1752" y1="18.785246875" x2="37.893653125" y2="13.0556" width="0.3048" layer="1"/>
 </signal>
 <signal name="INT">
 <contactref element="U4" pad="13"/>
@@ -2516,13 +2519,15 @@ design rules under a new name.</description>
 <via x="53.848" y="79.5274" extent="1-16" drill="0.35"/>
 <wire x1="53.848" y1="79.5274" x2="56.3118" y2="81.9912" width="0.3048" layer="16"/>
 <wire x1="56.3118" y1="81.9912" x2="58.674" y2="81.9912" width="0.3048" layer="16"/>
-<wire x1="58.674" y1="81.9912" x2="81.3816" y2="59.2836" width="0.3048" layer="16"/>
-<wire x1="81.3816" y1="59.2836" x2="81.3816" y2="26.2636" width="0.3048" layer="16"/>
+<wire x1="58.674" y1="81.9912" x2="65.532" y2="75.1332" width="0.3048" layer="16"/>
 <via x="81.3816" y="26.2636" extent="1-16" drill="0.35"/>
+<wire x1="81.3816" y1="53.1368" x2="81.3816" y2="26.2636" width="0.3048" layer="16"/>
 <wire x1="81.3816" y1="26.2636" x2="82.321878125" y2="25.323321875" width="0.3048" layer="1"/>
 <wire x1="82.321878125" y1="25.323321875" x2="82.321878125" y2="25.1138" width="0.3048" layer="1"/>
 <wire x1="83.39508125" y1="27.0322875" x2="82.321878125" y2="25.959084375" width="0.3048" layer="1"/>
 <wire x1="82.321878125" y1="25.959084375" x2="82.321878125" y2="25.1138" width="0.3048" layer="1"/>
+<wire x1="65.532" y1="68.9864" x2="81.3816" y2="53.1368" width="0.3048" layer="16"/>
+<wire x1="65.532" y1="75.1332" x2="65.532" y2="68.9864" width="0.3048" layer="16"/>
 </signal>
 <signal name="SLV2_R">
 <contactref element="R10" pad="1"/>
@@ -2890,11 +2895,9 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$9">
 <contactref element="BUZ" pad="2"/>
-<contactref element="LS2" pad="P"/>
-<wire x1="54.5898" y1="33.5228" x2="56.6876" y2="33.5228" width="0.3048" layer="1"/>
-<wire x1="56.6876" y1="33.5228" x2="58.1914" y2="35.0266" width="0.3048" layer="1"/>
-<wire x1="58.1914" y1="35.0266" x2="58.1914" y2="36.1832" width="0.3048" layer="1"/>
-<wire x1="58.1914" y1="36.1832" x2="58.166" y2="36.2086" width="0.3048" layer="1"/>
+<contactref element="LS1" pad="P"/>
+<wire x1="58.166" y1="36.2086" x2="58.166" y2="35.8958" width="0.3048" layer="1"/>
+<wire x1="58.166" y1="35.8958" x2="55.42" y2="33.1498" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="POWER1" pad="2"/>
@@ -2958,6 +2961,48 @@ design rules under a new name.</description>
 <via x="57.8866" y="56.7944" extent="1-16" drill="0.35"/>
 <wire x1="57.8866" y1="56.7944" x2="57.8866" y2="57.9075" width="0.3048" layer="1"/>
 <wire x1="57.8866" y1="57.9075" x2="57.8572" y2="57.9369" width="0.3048" layer="1"/>
+</signal>
+<signal name="D3">
+<polygon width="0.1524" layer="1">
+<vertex x="79.8322" y="19.2278" curve="-90"/>
+<vertex x="76.3016" y="15.7226" curve="-90"/>
+<vertex x="72.8218" y="19.2532" curve="-90"/>
+<vertex x="76.327" y="22.733" curve="-90"/>
+</polygon>
+<polygon width="0.1524" layer="16">
+<vertex x="72.8218" y="19.2024" curve="90"/>
+<vertex x="76.3016" y="15.7226" curve="90"/>
+<vertex x="79.8322" y="19.2532" curve="90"/>
+<vertex x="76.2762" y="22.733" curve="90"/>
+</polygon>
+</signal>
+<signal name="D1">
+<polygon width="0.1524" layer="1">
+<vertex x="37.6174" y="43.688" curve="-90"/>
+<vertex x="34.0868" y="40.1828" curve="-90"/>
+<vertex x="30.607" y="43.7134" curve="-90"/>
+<vertex x="34.1122" y="47.1932" curve="-90"/>
+</polygon>
+<polygon width="0.1524" layer="16">
+<vertex x="30.607" y="43.6626" curve="90"/>
+<vertex x="34.0868" y="40.1828" curve="90"/>
+<vertex x="37.6174" y="43.7134" curve="90"/>
+<vertex x="34.0614" y="47.1932" curve="90"/>
+</polygon>
+</signal>
+<signal name="D2">
+<polygon width="0.1524" layer="1">
+<vertex x="81.8896" y="65.786" curve="-90"/>
+<vertex x="78.359" y="62.2808" curve="-90"/>
+<vertex x="74.8792" y="65.8114" curve="-90"/>
+<vertex x="78.3844" y="69.2912" curve="-90"/>
+</polygon>
+<polygon width="0.1524" layer="16">
+<vertex x="74.8792" y="65.7606" curve="90"/>
+<vertex x="78.359" y="62.2808" curve="90"/>
+<vertex x="81.8896" y="65.8114" curve="90"/>
+<vertex x="78.3336" y="69.2912" curve="90"/>
+</polygon>
 </signal>
 </signals>
 <mfgpreviewcolors>

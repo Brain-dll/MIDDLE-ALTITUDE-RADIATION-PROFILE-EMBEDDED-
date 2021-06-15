@@ -7233,33 +7233,33 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 </deviceset>
 </devicesets>
 </library>
-<library name="SMT-BUZZER">
+<library name="CMT-7525S-SMT">
 <packages>
-<package name="CUI_CMT-8530S-SMT">
-<text x="6.25485" y="-4.1332" size="1.270990625" layer="21" rot="R90">+</text>
-<text x="-5.07218125" y="5.17221875" size="1.27055" layer="25">&gt;NAME</text>
-<text x="-4.57293125" y="-6.604240625" size="1.270809375" layer="27">&gt;VALUE</text>
-<wire x1="-4.25" y1="-4.25" x2="-4.25" y2="4.25" width="0.127" layer="51"/>
-<wire x1="2" y1="-4.25" x2="-2" y2="-4.25" width="0.127" layer="21"/>
-<wire x1="-4.25" y1="2" x2="-4.25" y2="-2" width="0.127" layer="21"/>
-<wire x1="4.25" y1="-4.25" x2="-4.25" y2="-4.25" width="0.127" layer="51"/>
-<text x="5.16041875" y="3.220259375" size="1.2701" layer="21">-</text>
-<wire x1="-5" y1="5" x2="-5" y2="-5" width="0.05" layer="39"/>
-<wire x1="5" y1="-5" x2="-5" y2="-5" width="0.05" layer="39"/>
-<wire x1="-4.25" y1="4.25" x2="4.25" y2="4.25" width="0.127" layer="51"/>
-<wire x1="4.25" y1="4.25" x2="4.25" y2="-4.25" width="0.127" layer="51"/>
-<wire x1="-2" y1="4.25" x2="2" y2="4.25" width="0.127" layer="21"/>
-<wire x1="4.25" y1="2" x2="4.25" y2="-2" width="0.127" layer="21"/>
-<wire x1="5" y1="5" x2="-5" y2="5" width="0.05" layer="39"/>
-<wire x1="5" y1="5" x2="5" y2="-5" width="0.05" layer="39"/>
-<smd name="P" x="3.5" y="-3.5" dx="2.5" dy="2.5" layer="1"/>
-<smd name="N" x="3.5" y="3.5" dx="2.5" dy="2.5" layer="1"/>
-<smd name="1" x="-3.5" y="3.5" dx="2.5" dy="2.5" layer="1"/>
-<smd name="2" x="-3.5" y="-3.5" dx="2.5" dy="2.5" layer="1"/>
+<package name="CUI_CMT-7525S-SMT">
+<text x="6.25653125" y="-4.13431875" size="1.27133125" layer="21" rot="R90">+</text>
+<text x="-3.804509375" y="5.176140625" size="1.271509375" layer="25">&gt;NAME</text>
+<text x="-3.81176875" y="-6.606540625" size="1.271259375" layer="27">&gt;VALUE</text>
+<wire x1="-3.75" y1="-3.75" x2="-3.75" y2="3.75" width="0.127" layer="51"/>
+<wire x1="1.5" y1="-3.75" x2="-1.5" y2="-3.75" width="0.127" layer="21"/>
+<wire x1="-3.75" y1="1.5" x2="-3.75" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="3.75" y1="-3.75" x2="-3.75" y2="-3.75" width="0.127" layer="51"/>
+<text x="5.16728125" y="3.22455" size="1.271790625" layer="21">-</text>
+<wire x1="-4.5" y1="4.5" x2="-4.5" y2="-4.5" width="0.05" layer="39"/>
+<wire x1="4.5" y1="-4.5" x2="-4.5" y2="-4.5" width="0.05" layer="39"/>
+<wire x1="-3.75" y1="3.75" x2="3.75" y2="3.75" width="0.127" layer="51"/>
+<wire x1="3.75" y1="3.75" x2="3.75" y2="-3.75" width="0.127" layer="51"/>
+<wire x1="-1.5" y1="3.75" x2="1.5" y2="3.75" width="0.127" layer="21"/>
+<wire x1="3.75" y1="1.5" x2="3.75" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="4.5" y1="4.5" x2="-4.5" y2="4.5" width="0.05" layer="39"/>
+<wire x1="4.5" y1="4.5" x2="4.5" y2="-4.5" width="0.05" layer="39"/>
+<smd name="P" x="3" y="-3" dx="2.5" dy="2.5" layer="1"/>
+<smd name="1" x="-3" y="-3" dx="2.5" dy="2.5" layer="1"/>
+<smd name="N" x="3" y="3" dx="2.5" dy="2.5" layer="1"/>
+<smd name="2" x="-3" y="3" dx="2.5" dy="2.5" layer="1"/>
 </package>
 </packages>
 <symbols>
-<symbol name="CMT-8530S-SMT">
+<symbol name="CMT-7525S-SMT">
 <wire x1="-0.635" y1="1.27" x2="0" y2="1.27" width="0.254" layer="94"/>
 <wire x1="0" y1="1.27" x2="0.635" y2="1.27" width="0.254" layer="94"/>
 <wire x1="0.635" y1="1.27" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
@@ -7271,21 +7271,21 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="1.905" y1="-3.175" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
 <wire x1="0" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="-1.27" x2="0" y2="-2.54" width="0.254" layer="94"/>
-<text x="-1.90696875" y="1.271309375" size="1.779840625" layer="94">+</text>
-<text x="-3.813390625" y="8.897909375" size="1.77958125" layer="95">&gt;NAME</text>
-<text x="-3.814940625" y="-11.4448" size="1.780309375" layer="96">&gt;VALUE</text>
+<text x="-1.906109375" y="1.270740625" size="1.779040625" layer="94">+</text>
+<text x="-3.810790625" y="8.891840625" size="1.77836875" layer="95">&gt;NAME</text>
+<text x="-3.81581875" y="-11.4474" size="1.780709375" layer="96">&gt;VALUE</text>
 <pin name="P" x="0" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
 <pin name="N" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="CMT-8530S-SMT" prefix="LS">
-<description>8.5 mm, 3.6 Vo-p, 90 dB, Surface Mount (SMT), Magnetic Audio Transducer Buzzer &lt;a href="https://pricing.snapeda.com/parts/CMT-8530S-SMT-TR/CUI%20Devices/view-part?ref=eda"&gt;Check prices&lt;/a&gt;</description>
+<deviceset name="CMT-7525S-SMT" prefix="LS">
+<description>7.5 mm, 3.6 Vo-p, 90 dB, Surface Mount (SMT), Magnetic Audio Transducer Buzzer &lt;a href="https://pricing.snapeda.com/parts/CMT-7525S-SMT-TR/CUI%20Devices/view-part?ref=eda"&gt;Check prices&lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="CMT-8530S-SMT" x="0" y="0"/>
+<gate name="G$1" symbol="CMT-7525S-SMT" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="CUI_CMT-8530S-SMT">
+<device name="" package="CUI_CMT-7525S-SMT">
 <connects>
 <connect gate="G$1" pin="N" pad="N"/>
 <connect gate="G$1" pin="P" pad="P"/>
@@ -7293,11 +7293,11 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <technologies>
 <technology name="">
 <attribute name="AVAILABILITY" value="In Stock"/>
-<attribute name="CUI_PURCHASE_URL" value="https://www.cuidevices.com/product/audio/buzzers/audio-transducers/cmt-8530s-smt-tr?utm_source=snapeda.com&amp;utm_medium=referral&amp;utm_campaign=snapedaBOM"/>
-<attribute name="DESCRIPTION" value="8.5 mm, 3.6 Vo-p, 90 dB, Surface Mount (SMT), Magnetic Audio Transducer Buzzer"/>
+<attribute name="CUI_PURCHASE_URL" value="https://www.cuidevices.com/product/audio/buzzers/audio-transducers/cmt-7525s-smt-tr?utm_source=snapeda.com&amp;utm_medium=referral&amp;utm_campaign=snapedaBOM"/>
+<attribute name="DESCRIPTION" value="7.5 mm, 3.6 Vo-p, 90 dB, Surface Mount (SMT), Magnetic Audio Transducer Buzzer"/>
 <attribute name="MF" value="CUI Devices"/>
-<attribute name="MP" value="CMT-8530S-SMT-TR"/>
-<attribute name="PACKAGE" value=" CUI"/>
+<attribute name="MP" value="CMT-7525S-SMT-TR"/>
+<attribute name="PACKAGE" value=" CUI Inc."/>
 <attribute name="PRICE" value="None"/>
 </technology>
 </technologies>
@@ -7458,7 +7458,7 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="J5" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="USB_AB" device="_SMT" package3d_urn="urn:adsk.eagle:package:38266/1"/>
 <part name="SUPPLY34" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VIN" device="" value="VINR"/>
-<part name="LS2" library="SMT-BUZZER" deviceset="CMT-8530S-SMT" device=""/>
+<part name="LS1" library="CMT-7525S-SMT" deviceset="CMT-7525S-SMT" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8348,9 +8348,9 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <instance part="SUPPLY34" gate="G$1" x="78.74" y="78.74" smashed="yes" rot="R180">
 <attribute name="VALUE" x="78.74" y="75.946" size="1.778" layer="96" rot="R180" align="bottom-center"/>
 </instance>
-<instance part="LS2" gate="G$1" x="83.82" y="25.4" smashed="yes" rot="R90">
-<attribute name="NAME" x="74.922090625" y="21.586609375" size="1.77958125" layer="95" rot="R90"/>
-<attribute name="VALUE" x="95.2648" y="21.585059375" size="1.780309375" layer="96" rot="R90"/>
+<instance part="LS1" gate="G$1" x="83.82" y="25.4" smashed="yes" rot="R90">
+<attribute name="NAME" x="74.928159375" y="21.589209375" size="1.77836875" layer="95" rot="R90"/>
+<attribute name="VALUE" x="95.2674" y="21.58418125" size="1.780709375" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -8462,9 +8462,9 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="78.74" y1="91.44" x2="78.74" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="LS2" gate="G$1" pin="N"/>
 <pinref part="GND23" gate="1" pin="GND"/>
 <wire x1="88.9" y1="25.4" x2="93.98" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="LS1" gate="G$1" pin="N"/>
 </segment>
 </net>
 <net name="OSC_IN" class="0">
@@ -8788,8 +8788,8 @@ Number of pins: &lt;b&gt;4&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <net name="N$9" class="0">
 <segment>
 <pinref part="BUZ" gate="G$1" pin="2"/>
-<pinref part="LS2" gate="G$1" pin="P"/>
 <wire x1="73.66" y1="25.4" x2="78.74" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="LS1" gate="G$1" pin="P"/>
 </segment>
 </net>
 <net name="INT1" class="0">
