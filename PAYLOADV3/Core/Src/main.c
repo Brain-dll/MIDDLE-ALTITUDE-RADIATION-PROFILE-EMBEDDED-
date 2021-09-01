@@ -25,19 +25,16 @@
 /* USER CODE BEGIN Includes */
 #include "string.h"
 #include "stdio.h"
-#include "fatfs_sd.h"
+#include "fatfs.h"
 #include "MS5611.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-extern uint8_t AS;
-extern char RX1_BUFF[180];
-uint8_t C_SD = 0;
-extern uint8_t MS5611;
-float ALT_T = 0, BASE_ALT_T = 0;
-uint8_t WRITE_SD = 0;
-uint8_t CLOSE_READY_SD = 0;
+char RX2_BUFF[11] = {0};
+char RX1_BUFF[120] = {0};
+char RX1_BUFF_T[140] = {0};
+uint8_t k = 0, n = 0, go = 0;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -60,8 +57,14 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-char *RX2_BUF = "ATCDATA\r\n";
+
 extern char buff;
+float ALT_T = 0.0, velocity = .0, PALT_T = .0, ElapsedTime = .0;
+uint32_t PreviousTime = 0, CurrentTime = .0;
+
+// velocity ElapsedTimePreviousTimeCurrentTimePALT_T
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,8 +72,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
-static void MX_SPI2_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_SPI2_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -110,7 +113,6 @@ void bufclear(void)  // clear buffer
 	for (int i = 0; i < 1024; i++)
 		buffer[i] = '\0';
 }
-
 /* USER CODE END 0 */
 
 /**
@@ -143,108 +145,128 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
-  MX_SPI2_Init();
-  MX_FATFS_Init();
   MX_I2C1_Init();
+  MX_FATFS_Init();
+  MX_SPI2_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+
   fresult = f_mount(&fs, "", 0);
-        	if (fresult != FR_OK)
-        		send_uart("Error in mounting SD CARD...\n");
-        	else
-        		send_uart("SD CARD mounted successfully...\n");
+    	if (fresult != FR_OK)
+    		send_uart("Error in mounting SD CARD...\n");
+    	else
+    		send_uart("SD CARD mounted successfully...\n");
 
-        	/**********CARD CAPACITY DETAILS**********/
-        	/* Check free space */
-        	f_getfree("", &fre_clust, &pfs);
+    	/**********CARD CAPACITY DETAILS**********/
+    	/* Check free space */
+    	f_getfree("", &fre_clust, &pfs);
 
-        	total = (uint32_t) ((pfs->n_fatent - 2) * pfs->csize * 0.5);
-        	sprintf(buffer, "SD CARD Total Size : \t%lu\n", total);
-        	send_uart(buffer);
-        	bufclear();
-        	free_space = (uint32_t) (fre_clust * pfs->csize * 0.5);
-        	sprintf(buffer, "SD CARD Free Space : \t%lu\n", free_space);
-        	send_uart(buffer);
+    	total = (uint32_t) ((pfs->n_fatent - 2) * pfs->csize * 0.5);
+    	sprintf(buffer, "SD CARD Total Size : \t%lu\n", total);
+    	send_uart(buffer);
+    	bufclear();
+    	free_space = (uint32_t) (fre_clust * pfs->csize * 0.5);
+    	sprintf(buffer, "SD CARD Free Space : \t%lu\n", free_space);
+    	send_uart(buffer);
 
 
-          /**********THE FOLLWING OPERATION IS USING PUTS AND GETS**********/
-        	/* Open file to write/create a file if it doesn't exist */
-        	fresult = f_open(&fil, "EPHEMERISH_PAYLOAD.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE);
+      /**********THE FOLLWING OPERATION IS USING PUTS AND GETS**********/
+    	/* Open file to write/create a file if it doesn't exist */
+    	fresult = f_open(&fil, "EPHEMERISH_PAYLOAD.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE);
 
-        	/* Writing text */
-        	fresult = f_puts("EPHEMERISH PAYLOAD MISSION : RADIATION PROFILE OF 10000 FT\n\n", &fil);
+    	/* Writing text */
+    	fresult = f_puts("EPHEMERISH PAYLOAD MISSION : RADIATION PROFILE\n\n", &fil);
 
-        	send_uart("File.txt is created and the data is written \n");
-
-//        	fresult = f_close(&fil);
+    	/* Close file */
+//    	fresult = f_close(&fil);
 //
-//        	fresult = f_open(&fil, "EPHEMERISH_PAYLOAD.txt", FA_READ | FA_WRITE);
-
-//        	/* Close file */
-//        	fresult = f_close(&fil);
+//    	send_uart("File.txt is created and the data is written \n");
 //
-//        	send_uart("File.txt is created and the data is written \n");
+//    	/* Open file to read */
+//    	fresult = f_open(&fil, "file1.txt", FA_READ);
 //
-//        	/* Open file to read */
-//        	fresult = f_open(&fil, "EPHEMERISH_PAYLOAD.txt", FA_READ);
+//    	/* Read string from the file */
+//    	f_gets(buffer, fil.fsize, &fil);
 //
-//        	/* Read string from the file */
-//        	f_gets(buffer, fil.fsize, &fil);
+//    	send_uart(buffer);
 //
-//        	send_uart(buffer);
+//    	/* Close file */
+//    	f_close(&fil);
 //
-//        	/* Close file */
-//        	f_close(&fil);
-//
-//        	bufclear();
+//    	bufclear();
 
 	for (uint8_t i = 0; i < 12; i++) {
 		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
 		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
 		HAL_Delay(50);
 	}
-
 	MS5611_Init();
-	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
-	HAL_UART_Transmit(&huart1, (uint8_t*) RX2_BUF, strlen(RX2_BUF), 1000);
-
-	BASE_ALT_T = MS5611_ReadMedian_Altitude();
-
+	//__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+	HAL_TIM_Base_Start(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+	while (1) {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  ALT_T = MS5611_ReadMedian_Altitude();
-	  if(AS == 1 && ALT_T >  BASE_ALT_T + 20){
-		  for(uint8_t i = 0 ; i < sizeof(RX1_BUFF) ; i++){
-			  if(RX1_BUFF[i] == '\n'){
-				  RX1_BUFF[i] = '|';
-				  break;
-			  }
-		  }
-		  sprintf(RX1_BUFF, "%s  ALT : %.2f\n", RX1_BUFF, ALT_T);
-		  fresult = f_puts(RX1_BUFF, &fil);
-		  HAL_UART_Transmit(&huart2, (uint8_t *)RX1_BUFF, sizeof(RX1_BUFF), 1000);
-		  for(uint8_t i = 0 ; i < sizeof(RX1_BUFF) ; i++)
-			  RX1_BUFF[i] = '\0';
-		  AS = 0;
-		  HAL_UART_Transmit(&huart1, (uint8_t *)RX2_BUF, strlen(RX2_BUF), 1000);
-		  if(ALT_T >  BASE_ALT_T + 500){
-			  CLOSE_READY_SD = 1;
-			  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-		  }
+		if (ALT_T > 200)
+			go = 1;
+		else{
+			ALT_T = MS5611_ReadMedian_Altitude();
+		}
+		if (go == 1) {
 
-	  }
-	  if((CLOSE_READY_SD == 1) && (ALT_T < BASE_ALT_T + 50)){
-		  fresult = f_close(&fil);
-		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, SET);
-	  }
-  }
+			PALT_T = ALT_T;
+			ALT_T = MS5611_ReadMedian_Altitude();
+
+			PreviousTime = CurrentTime;
+			CurrentTime = __HAL_TIM_GET_COUNTER(&htim2);
+			if (CurrentTime < PreviousTime)
+				CurrentTime += 65535;
+			ElapsedTime = (float) (CurrentTime - PreviousTime) / 1000.0;
+
+			velocity = (PALT_T - ALT_T) / ElapsedTime;
+
+			HAL_UART_Transmit(&huart1, (uint8_t*) RX2_BUFF,
+					sprintf(RX2_BUFF, "ATCDATA\r\n"), 1000);
+			HAL_UART_Receive(&huart1, (uint8_t*) RX1_BUFF, sizeof(RX1_BUFF),
+					1000);
+
+			PALT_T = ALT_T;
+						ALT_T = MS5611_ReadMedian_Altitude();
+
+						PreviousTime = CurrentTime;
+						CurrentTime = __HAL_TIM_GET_COUNTER(&htim2);
+						if (CurrentTime < PreviousTime)
+							CurrentTime += 65535;
+						ElapsedTime = (float) (CurrentTime - PreviousTime) / 1000.0;
+
+						velocity = (PALT_T - ALT_T) / ElapsedTime;
+
+			sprintf(RX1_BUFF_T, "ALT : %.2f  V : %.2f T : %.3f |  ", ALT_T, velocity, ElapsedTime);
+			sprintf(RX1_BUFF_T, "%s%s", RX1_BUFF_T, RX1_BUFF);
+
+			HAL_UART_Transmit(&huart2, (uint8_t*) RX1_BUFF_T,
+					sizeof(RX1_BUFF_T), 1500);
+			fresult = f_puts(RX1_BUFF_T, &fil);
+
+			for (uint8_t i = 0; i < sizeof(RX1_BUFF); i++)
+				RX1_BUFF[i] = '\0';
+			for (uint8_t i = 0; i < sizeof(RX1_BUFF_T); i++)
+				RX1_BUFF_T[i] = '\0';
+		}
+
+		if (go == 1 && ALT_T < 100) {
+			go = 0;
+			f_close(&fil);
+			while (1) {
+				HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+				HAL_Delay(1000);
+			}
+		}
+	}
   /* USER CODE END 3 */
 }
 
@@ -277,8 +299,8 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV16;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV16;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
@@ -343,7 +365,7 @@ static void MX_SPI2_Init(void)
   hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi2.Init.NSS = SPI_NSS_SOFT;
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;
   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -377,9 +399,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 35999;
+  htim2.Init.Prescaler = 8999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 99;
+  htim2.Init.Period = 65535;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)

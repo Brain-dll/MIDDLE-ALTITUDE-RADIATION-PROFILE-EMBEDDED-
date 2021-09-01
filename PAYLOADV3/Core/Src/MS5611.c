@@ -156,7 +156,7 @@ float MS5611_ReadAltitude(void)
 	//ALT = (float) (44330.0 * (1 - pow((PRESS / P0), (1 / 5.255))));
 	ALT = ((pow((P0/P), (1/5.257))-1) * (*pte + 273.15)) / 0.0065;  // Altitude with temperature and pressure
 	//ALT = (pow(10,log(PRESS/P0)/5.2558797)-1) / (-6.8755856 * pow(10,-6));
-	return (ALT /*- BASE*/);  // Offset kullanımı aktif edildi
+	return (ALT - BASE);
 }
 
 float MS5611_ReadMedian_Altitude(void)
